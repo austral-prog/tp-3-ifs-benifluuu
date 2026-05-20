@@ -1,50 +1,32 @@
 def discount():
     """
-    Ejercicio 9 (Integrador) - Sistema de Descuentos
-
-    Crear un sistema de descuentos para una tienda. Leer mediante input():
-    1. El precio unitario de un producto (decimal)
-    2. La cantidad de unidades a comprar (entero)
-
-    Calcular el total aplicando los siguientes descuentos según la cantidad:
-    - Si compra 10 o más unidades: 20% de descuento
-    - Si compra entre 5 y 9 unidades: 10% de descuento
-    - Si compra menos de 5 unidades: sin descuento
-
-    Imprimir:
-    1. El subtotal (precio × cantidad)
-    2. El porcentaje de descuento aplicado
-    3. El monto del descuento
-    4. El total final
-
-    Ejemplo:
-        Para las entradas "100" y "12", la salida esperada es:
-        Subtotal: 1200.0
-        Descuento aplicado: 20%
-        Monto de descuento: 240.0
-        Total final: 960.0
+    Ejercicio 10 - Sistema de Descuentos por Cantidad
+    Lee el precio unitario y la cantidad de unidades, determina el descuento aplicable,
+    realiza los cálculos matemáticos correspondientes e imprime la salida formateada.
     """
+    # 1. Leer las dos entradas secuencialmente y realizar el casting al tipo correcto
+    precio = float(input())
+    cantidad = int(input())
 
-    precio_producto = float(input())
-    cantidad_producto = int(input())
-    Subtotal = precio_producto * cantidad_producto
-    print("Subtotal:",Subtotal)
+    # 2. Calcular el subtotal inicial
+    subtotal = precio * cantidad
 
-    if cantidad_producto >= 10:
-        descuento = 0.20
-        print("Descuento aplicado: 20%")
-
-    elif cantidad_producto >= 5 and cantidad_producto <= 9:
-        descuento = 0.10
-        print("Descuento aplicado: 10%")
-
+    # 3. Estructura condicional para determinar el porcentaje de descuento según la cantidad
+    if cantidad >= 10:
+        porcentaje_str = "20%"
+        monto_descuento = subtotal * 0.20
+    elif cantidad >= 5: # Al fallar la anterior, ya sabemos que cantidad es menor a 10
+        porcentaje_str = "10%"
+        monto_descuento = subtotal * 0.10
     else:
-        descuento = 0.0
-        print("Descuento aplicado: 0%")
+        porcentaje_str = "0%"
+        monto_descuento = 0.0
 
-    monto_descuento = Subtotal * descuento
-    print("Monto de descuento:",monto_descuento)
+    # 4. Calcular el total final a pagar
+    total_final = subtotal - monto_descuento
 
-    Total_final = Subtotal - monto_descuento
-    print("Total final:",Total_final)
-    
+    # 5. Imprimir los resultados utilizando f-strings respetando el formato exacto
+    print(f"Subtotal: {subtotal}")
+    print(f"Descuento aplicado: {porcentaje_str}")
+    print(f"Monto de descuento: {monto_descuento}")
+    print(f"Total final: {total_final}")

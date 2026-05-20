@@ -1,35 +1,21 @@
 def triangle():
     """
-    Ejercicio 8 - Validar Triángulo
-
-    Leer tres números que representan los lados de un triángulo mediante input().
-    Verificar si pueden formar un triángulo válido e imprimir el resultado.
-    Un triángulo es válido si la suma de dos lados cualesquiera es estrictamente mayor
-    que el tercer lado (desigualdad triangular). Si la suma es igual, forman una línea
-    recta, no un triángulo.
-
-    Ejemplo:
-        Para las entradas "3", "4" y "5", la salida esperada es:
-        Los lados forman un triangulo valido
-
-        Para las entradas "1", "2" y "5", la salida esperada es:
-        Los lados no forman un triangulo valido
+    Ejercicio 9 - Validar Triángulo
+    Leer tres números flotantes mediante input(). Determina si pueden formar
+    un triángulo válido aplicando la desigualdad triangular.
     """
+    # 1. Leer los tres lados de forma secuencial
+    a = float(input())
+    b = float(input())
+    c = float(input())
 
+    # 2. Verificar las tres condiciones de la desigualdad triangular usando 'and'
+    condicion1 = (a + b) > c
+    condicion2 = (a + c) > b
+    condicion3 = (b + c) > a
 
-    lado1 = int(input())
-    lado2 = int(input())
-    lado3 = int(input())
-
-    if lado1 + lado2 > lado3 and lado1 + lado3 > lado2 and lado2 + lado3 > lado1:
+    # 3. Evaluar si se cumplen todas simultáneamente
+    if condicion1 and condicion2 and condicion3:
         print("Los lados forman un triangulo valido")
-
     else:
         print("Los lados no forman un triangulo valido")
-
-
-
-
-
-    pass
-#triangle()

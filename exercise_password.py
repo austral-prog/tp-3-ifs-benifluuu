@@ -1,63 +1,34 @@
 def password():
     """
-    Ejercicio 10 - Validador de Contraseña
-
-    Leer una contraseña mediante input(). Validar que cumpla con los siguientes requisitos:
-    1. Debe tener al menos 8 caracteres de longitud
-    2. Debe contener al menos un número (usar el operador in para verificar cada dígito del 0 al 9)
-
-    Si cumple ambos requisitos, imprimir "Contraseña valida".
-    Si no cumple, imprimir cuál requisito falta.
-
-    Ejemplo:
-        Para la entrada "abc12345", la salida esperada es:
-        Contraseña valida
-
-        Para la entrada "abc123", la salida esperada es:
-        Contraseña muy corta
-
-        Para la entrada "abcdefgh", la salida esperada es:
-        Debe contener un numero
-
-        Para la entrada "abc", la salida esperada es:
-        Contraseña muy corta
-        Debe contener un numero
+    Ejercicio 11 - Validar Contraseña
+    Lee una contraseña mediante input() y verifica de forma independiente 
+    si cumple con la longitud mínima y si contiene al menos un número.
     """
+    # 1. Leer la contraseña
+    contrasena = input()
 
-    contraseña = input()
+    # 2. Inicializar banderas de control
+    tiene_largo_valido = True
+    tiene_numero = False
 
-    if len(contraseña) < 8:
-        print("Contraseña muy corta")
+    # 3. Validar requisito de longitud
+    if len(contrasena) < 8:
+        tiene_largo_valido = False
 
-    if not ("0" in contraseña or "1" in contraseña or "2" in contraseña or
-            "3" in contraseña or "4" in contraseña or "5" in contraseña or
-            "6" in contraseña or "7" in contraseña or "8" in contraseña or
-            "9" in contraseña):
-        print("Debe contener un numero")
+    # 4. Validar requisito de contener al menos un número (0 al 9)
+    # Si cualquiera de estos caracteres está en la contraseña, la bandera pasa a True
+    if ("0" in contrasena or "1" in contrasena or "2" in contrasena or 
+        "3" in contrasena or "4" in contrasena or "5" in contrasena or 
+        "6" in contrasena or "7" in contrasena or "8" in contrasena or 
+        "9" in contrasena):
+        tiene_numero = True
 
-    if len(contraseña) >= 8 and ("0" in contraseña or "1" in contraseña or "2" in contraseña or
-                                 "3" in contraseña or "4" in contraseña or "5" in contraseña or
-                                 "6" in contraseña or "7" in contraseña or "8" in contraseña or
-                                 "9" in contraseña):
-     print("Contraseña valida")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    pass
-#password()
+    # 5. Evaluar los resultados y emitir los mensajes correspondientes
+    if tiene_largo_valido and tiene_numero:
+        print("Contraseña valida")
+    else:
+        # Usamos ifs independientes para que se puedan imprimir ambos errores si es necesario
+        if not tiene_largo_valido:
+            print("Contraseña muy corta")
+        if not tiene_numero:
+            print("Debe contener un numero")

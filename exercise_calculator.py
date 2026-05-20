@@ -1,68 +1,31 @@
 def calculator():
     """
-    Ejercicio 7 - Calculadora Simple
-
-    Leer dos números (pueden ser decimales) y una operación (+, -, *, /) mediante input().
-    Realizar la operación correspondiente e imprimir el resultado.
-
-    Validaciones:
-    - Si la operación es inválida, imprimir "Operacion invalida"
-    - Si es división y el divisor es cero, imprimir "Error: division por cero"
-
-    Ejemplo:
-        Para las entradas "10", "5" y "+", la salida esperada es:
-        Resultado: 15.0
-
-        Para las entradas "10", "2" y "/", la salida esperada es:
-        Resultado: 5.0
-
-        Para las entradas "10", "0" y "/", la salida esperada es:
-        Error: division por cero
-
-        Para las entradas "10", "5" y "x", la salida esperada es:
-        Operacion invalida
+    Ejercicio 8 - Calculadora Básica
+    Leer dos números flotantes y un operador (+, -, *, /) mediante input().
+    Realiza la operación correspondiente aplicando las validaciones requeridas.
     """
-
-
+    # 1. Leer las tres entradas secuencialmente
     num1 = float(input())
     num2 = float(input())
     operacion = input()
 
+    # 2. Estructura condicional para evaluar la operación y realizar validaciones
     if operacion == "+":
-        print("Resultado:", float(num1 + num2))
-
+        print(f"Resultado: {num1 + num2}")
+        
     elif operacion == "-":
-        print("Resultado:", float(num1 - num2))
-
+        print(f"Resultado: {num1 - num2}")
+        
     elif operacion == "*":
-        print("Resultado:", float(num1 * num2))
-
+        print(f"Resultado: {num1 * num2}")
+        
     elif operacion == "/":
+        # Validación crítica: evitar la división por cero
         if num2 == 0:
             print("Error: division por cero")
         else:
-            print("Resultado:", float(num1 / num2))
-
+            print(f"Resultado: {num1 / num2}")
+            
     else:
+        # Validación: cualquier otro símbolo es una operación inválida
         print("Operacion invalida")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-pass
-#calculator()

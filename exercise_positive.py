@@ -1,35 +1,18 @@
 def positive():
     """
     Ejercicio 1 - Clasificar Número
-
     Leer un número entero mediante input(). Determinar si es positivo, negativo o cero
     e imprimir el resultado correspondiente.
-
-    Ejemplo:
-        Para la entrada "5", la salida esperada es:
-        El numero es positivo
-
-        Para la entrada "-3", la salida esperada es:
-        El numero es negativo
-
-        Para la entrada "0", la salida esperada es:
-        El numero es cero
     """
+    # 1. Leer la entrada y convertirla a un número entero
+    numero = int(input())
 
-    Numero= int(input())
-
-    if Numero > 0:
+    # 2. Estructura condicional para evaluar el valor
+    if numero > 0:
         print("El numero es positivo")
-
-    elif Numero < 0:
+    elif numero < 0:
         print("El numero es negativo")
-
     else:
         print("El numero es cero")
-
-    pass
-
-
-#positive()
 
 
